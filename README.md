@@ -3,6 +3,8 @@
 # Główny spis treści
 * [MN_02](#MN_02)
 * [MN_03_1](#MN_03_1)
+* [MN_04_1](#MN_04_1)
+* [MN_05_01](#MN_05_01)
 
 ## MN_02
 
@@ -29,3 +31,97 @@ interakcji z użytkownikiem oraz podstawowe komunikaty w konsoli.
 
 
 ## MN_03_1
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację mteody eliminacji Gaussa, służącą do rozwiązywania liniowych układów równań,
+odczytywnaych z pliku tekstowego. Idea porgramu skupia się na przekształceniu macierzy w macierz trójkątną górną,
+potem wykorzystywane jest podstawianie wstecz, aby uzyskać szukane wartości niewiadome. W wyniku otrzmujemy listę
+współczynników, które są rozwiązaniami zadanego układu równań.
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* NumPY 2.2.2
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Dla możliwości przetestowania programu dodane zostały dwa 
+pliki tekstowe z przykładowymi macierzami (układami) oraz ich wymiarami na początku pliku. Struktura kodu składa się 
+z funkcji `read_file`, która odpowiada za wczytywanie macierzy rozszerzonej układu z pliku, `postepowanie_proste`, 
+która implementuje eliminację Gaussa - przekształca macierz do postaci trójkątnej, `postepowanie_odwrotne`, która 
+poprzez podstawianie wstecz wyznacza niewiadome oraz `main`, gdzie następuje użycie wszystkich funkcji składowych i 
+otrzymujemy wydrukowany wynik.
+
+
+## MN_04_1
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje rozbudowaną implementację projektu poprzedniego, mamy w tym przypadku do czynienia z roszerzoną 
+metodą eliminacji Gaussa, która uwzględnia wybór elementu głównego - pivoting - oraz 
+eliminację Crouta. Program, tak jak poprzednio, rozwiązuje układy równań liniowych na 
+podstawie pliku tekstowego.
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* NumPY 2.2.2
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodane zostały 3 pliki 
+tesktowe z przykładowymi macierzami (układami) oraz ich wymiarami na początku pliku. 
+Struktura kodu składa się z funkcji `read_file`, wczytującej macierz rozszerzoną układu równań z pliku, 
+`pivoting` implementującej wybór częściowy elementu głównego w eliminacji Gaussa,
+`postepowanie_proste` standardowo realizującej eliminację Gaussa,
+`postepowanie_odwrotne` generującej rozwiązania układu poprzez podstawianie, 
+`edytuj_kolumny` implementującej dynamiczną zamianę kolumn Coruta,
+`postepowanie_proste_crout` realizującej eliminację Gaussa z dynamiczną zamianą kolumn, 
+`postepowanie_odwrotne_crout` generującej roziwązania układu równań z uwzględnieniem 
+zamiany kolumn oraz `main`, która odpowiada za ogólną logikę pogramu, odpowiednie użycie 
+zaprojektowanych funkcji oraz generowanie wydruków dla użytkownika.
+
+
+## MN_05_01
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację metody LU do rozwiązywania układów równań liniowych za pomocą
+dekompozycji macierzy współczynników na iloczyn macierzy dolnej, trójkątnej L oraz górnej, 
+trójkątnej U. Program działa kolejno poprzez wczytanie danych z plików tekstowych, dokonanie 
+dekompozycji LU oraz rozwiązanie układu równań przez rozwiązanie dwóch układów trójkątnych.
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* NumPY 2.2.2
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodane zostały 2 pliki z 
+macierzą A (macierz współczynników) oraz wektorem B (wektro wyrazów wolnych). Struktura kodu
+składa się z funkcji `read_file_macierz` wczytującej macierz A z pliku, `read_file_wektor` 
+wczytującej wektor B z pliku, `utworz_macierz` tworzącej macierz zerową, `utworz_macierz_L_U`
+ dokonującej dekompozycji LU macierzy A, `wektor_y` rozwiązującej układ postaci L*Y=B, 
+`wektor_x` rozwiązującej układ U*X=Y oraz `main` zarządzającej ogólnym przepływem programu 
+oraz wydrukiem uzyskanych wyników.
+
+
+
+
+
+
+
+
+
+
