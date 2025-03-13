@@ -5,6 +5,8 @@
 * [MN_03_1](#MN_03_1)
 * [MN_04_1](#MN_04_1)
 * [MN_05_01](#MN_05_01)
+* [MN_06](#MN_06)
+* [MN_07](#MN_07)
 
 ## MN_02
 
@@ -116,7 +118,76 @@ wczytującej wektor B z pliku, `utworz_macierz` tworzącej macierz zerową, `utw
 `wektor_x` rozwiązującej układ U*X=Y oraz `main` zarządzającej ogólnym przepływem programu 
 oraz wydrukiem uzyskanych wyników.
 
+## MN_06
 
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację metody LDU do rozwiązywania układów równań liniowych za pomocą
+dekompozycji macierzy współczynników na iloczyn macierzy dolnej, trójkątnej L, górnej, 
+trójkątnej U oraz diagonalnej D. Program działa kolejno poprzez wczytanie danych z pliku tekstowego (w 
+tym macierzy współczynników A oraz wektora wyrazów wolnych B), sprawdzenie czy macierz jest diagonalnie
+dominująca, dekompozycję macierzy A na składowe L, D oraz U, obliczenie macierzy diagonalnej D, 
+iteracyjne rozwiązanie układu równań liniowych rpzez iterację prostą, dodatkowo jest także dodana druga
+wersja algorytmu generująca iteracje, aż do osiągnięcia zadanego błędu tolerancji.
+
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* NumPY 2.2.2
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany został plik z 
+macierzą rozszerzoną układu równań, wraz z wymiarem macierzy A (ilość szukanych zmiennych). Struktura kodu
+składa się z funkcji `read_file_macierz` wczytującej dane z pliku, `spr_diagonalnosc` sprawdzającej 
+spełnienie warunku diagonalności, `rozklad_LDU` dokonującej dekompozycji macierzy na macierze L, D oraz U,
+`macierz_odwrotna` obliczającej macierz odwrotną macierzy diagonalnej D, `pomnoz_macierz_wektorz` mnożącej
+ macierz przez wektor, `mnoz_macierze` wykonującej iloczyn macierzy, `rozwiazania` rozwiązującej układ 
+równań iteracyjnie dla ustalonej liczby iteracji, `rozwiazanie_2` rozwiązującej układ iteracyjnie, aż do 
+osiągnięcia zadanego warunku stopu oraz `main` zarządzającej ogólną logiką programu i wydrukiem 
+podstawowych informacji.
+
+
+## MN_07
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację metody LDU do rozwiązywania układów równań liniowych za pomocą
+dekompozycji macierzy współczynników na iloczyn macierzy dolnej, trójkątnej L, górnej, 
+trójkątnej U oraz diagonalnej D. Program działa kolejno poprzez wczytanie danych z pliku tekstowego (w 
+tym macierzy współczynników A oraz wektora wyrazów wolnych B), sprawdzenie czy macierz jest diagonalnie
+dominująca, dekompozycję macierzy A na składowe L, D oraz U, obliczenie macierzy diagonalnej D, 
+iteracyjne rozwiązanie układu równań liniowych rpzez iterację prostą, dodatkowo jest także dodana druga
+wersja algorytmu generująca iteracje, aż do osiągnięcia zadanego błędu tolerancji.
+
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* NumPY 2.2.2
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany został plik z 
+macierzą rozszerzoną układu równań, wraz z wymiarem macierzy A (ilość szukanych zmiennych). Struktura kodu
+składa się z funkcji `read_file_macierz` wczytującej dane z pliku, `spr_diagonalnosc` sprawdzającej 
+spełnienie warunku diagonalności, `rozklad_LDU` dokonującej dekompozycji macierzy na macierze L, D oraz U,
+`macierz_odwrotna` obliczającej macierz odwrotną macierzy diagonalnej D, `pomnoz_macierz_wektorz` mnożącej
+ macierz przez wektor, `mnoz_macierze` wykonującej iloczyn macierzy, `rozwiazania` rozwiązującej układ 
+równań iteracyjnie dla ustalonej liczby iteracji, `rozwiazanie_2` rozwiązującej układ iteracyjnie, aż do 
+osiągnięcia zadanego warunku stopu oraz `main` zarządzającej ogólną logiką programu i wydrukiem 
+podstawowych informacji.
+
+
+
+ 
 
 
 
