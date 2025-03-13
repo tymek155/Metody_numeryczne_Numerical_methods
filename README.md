@@ -7,6 +7,9 @@
 * [MN_05_01](#MN_05_01)
 * [MN_06](#MN_06)
 * [MN_07](#MN_07)
+* [MN_08](#MN_08)
+* [MN_09](#MN_09)
+* [MN_10](#MN_10)
 
 ## MN_02
 
@@ -48,7 +51,7 @@ współczynników, które są rozwiązaniami zadanego układu równań.
 ### Technologie
 W kodzie użyto:
 * Python 3.12
-* NumPY 2.2.2
+* NumPy 2.2.2
 	
 ### Wykorzystanie
 Kod był uruchamiany i napisany w środowisku PyCharm. Dla możliwości przetestowania programu dodane zostały dwa 
@@ -75,7 +78,7 @@ podstawie pliku tekstowego.
 ### Technologie
 W kodzie użyto:
 * Python 3.12
-* NumPY 2.2.2
+* NumPy 2.2.2
 	
 ### Wykorzystanie
 Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodane zostały 3 pliki 
@@ -107,7 +110,7 @@ dekompozycji LU oraz rozwiązanie układu równań przez rozwiązanie dwóch uk�
 ### Technologie
 W kodzie użyto:
 * Python 3.12
-* NumPY 2.2.2
+* NumPy 2.2.2
 	
 ### Wykorzystanie
 Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodane zostały 2 pliki z 
@@ -138,7 +141,7 @@ wersja algorytmu generująca iteracje, aż do osiągnięcia zadanego błędu tol
 ### Technologie
 W kodzie użyto:
 * Python 3.12
-* NumPY 2.2.2
+* NumPy 2.2.2
 	
 ### Wykorzystanie
 Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany został plik z 
@@ -160,30 +163,115 @@ podstawowych informacji.
 * [Wykorzystanie](#wykorzystanie)
 
 ### Ogólne informacje
-Projekt realizuje implementację metody LDU do rozwiązywania układów równań liniowych za pomocą
-dekompozycji macierzy współczynników na iloczyn macierzy dolnej, trójkątnej L, górnej, 
-trójkątnej U oraz diagonalnej D. Program działa kolejno poprzez wczytanie danych z pliku tekstowego (w 
-tym macierzy współczynników A oraz wektora wyrazów wolnych B), sprawdzenie czy macierz jest diagonalnie
-dominująca, dekompozycję macierzy A na składowe L, D oraz U, obliczenie macierzy diagonalnej D, 
-iteracyjne rozwiązanie układu równań liniowych rpzez iterację prostą, dodatkowo jest także dodana druga
-wersja algorytmu generująca iteracje, aż do osiągnięcia zadanego błędu tolerancji.
-
+Projekt realizuje implementację 3 różnych metod całkowania funkcji jednej zmiennej w zadanym przedziale.
+Zaimplementowane metody to metoda prostokątów (aporksymowanie całki przez sumowanie wartości funkcji 
+w środkach przedziałów), metoda trapezów (obliczanie obszaru pod wykresem za pomocą trapezów) oraz 
+metoda Simpsona (szacowanie wartości funkcji przez przybliżenie paraboliczne). Użytkownik może zadać 
+przedział całkowania oraz liczbę podprzedziałów dla metod.
 
 ### Technologie
 W kodzie użyto:
 * Python 3.12
-* NumPY 2.2.2
+* math
 	
 ### Wykorzystanie
-Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany został plik z 
-macierzą rozszerzoną układu równań, wraz z wymiarem macierzy A (ilość szukanych zmiennych). Struktura kodu
-składa się z funkcji `read_file_macierz` wczytującej dane z pliku, `spr_diagonalnosc` sprawdzającej 
-spełnienie warunku diagonalności, `rozklad_LDU` dokonującej dekompozycji macierzy na macierze L, D oraz U,
-`macierz_odwrotna` obliczającej macierz odwrotną macierzy diagonalnej D, `pomnoz_macierz_wektorz` mnożącej
- macierz przez wektor, `mnoz_macierze` wykonującej iloczyn macierzy, `rozwiazania` rozwiązującej układ 
-równań iteracyjnie dla ustalonej liczby iteracji, `rozwiazanie_2` rozwiązującej układ iteracyjnie, aż do 
-osiągnięcia zadanego warunku stopu oraz `main` zarządzającej ogólną logiką programu i wydrukiem 
-podstawowych informacji.
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany w funkcjach dodano 3 wzory różnych
+funkcji. Struktura kodu składa się z funkcji `metoda_prostokatow` implementującej metodę prostokątów, 
+`metoda_trapezow` implementującej metodę trapezów, `metoda_simpsona` implementującej metodę parabol, 3 
+wariantów testowych `sin`, `exp` oraz `fun_x`, a także standardowo funkcji `main` odpowiadającej za
+interakcję z użytkownikiem, użycie odpowiednich funkcji oraz wydruk informacji wynikowych.
+
+
+## MN_08
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację, tak jak projekt poprzedzający, 3 podstawowych metod całkowania oraz
+dodatkowej, bardziej zaawansowanej metody - metody kwadratur Gaussa dla 2, 3 oraz 4 węzłów. 
+Przeprowadzone zostały także testy skuteczności wspomnianych metod na różnych funkcjach matematycznych.
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* math
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany w funkcjach dodano 3 wzory różnych
+funkcji. Struktura kodu składa się z funkcji (poprzednich 3 funkcji) `metoda_prostokatow`, 
+`metoda_trapezow` oraz `metoda_simpsona`, dodane zostały funkcje `kwadratura_2` implementująca 
+kwadraturę Gaussa dla 2 węzłów, `kwadratura_3` implementująca kwadraturę Gaussa dla 3 węzłów, 
+`kwadratura_4` implementującej kwadraturę Gaussa dla 4 węzłów, funkcji testowych oraz scalającej 
+funkcji `main`.
+
+## MN_09
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację aproksymacji wielomianowej metodą najmniejszych kwadratów. Z pliku 
+tekstowego wczytywane są wymagane dane, tworozna jest macierz normalna układu równań normlanych, 
+układ rozwiązywany jest metodą eliminacji Gaussa, końcowo wyznaczane są współczynniki wielomainu
+aproksymującego dane.
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* NumPy 2.2.2
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany został plik z przykładowymi dwoma
+kolumnami danych (x, y) oraz z oznaczoną na wstępie ilościa wierszy danych. Struktura kodu składa się 
+z funkcji `read_file` odpowiadającej za wczytanie danych z pliku, `approx` tworzącej macierz normalną 
+oraz odpowiedni wektor `f` z danych wejściowych, `scal_gf` łączącej macierz i wektor w macierz 
+rozszerzoną, `postepowanie_proste` przekształcającej macierz do postaci trójkątnej, 
+`postepowanie_odwrotne` wyznaczającej rozwiązania układu równań, `new_y` wyliczającej nowe wartości 
+wielomianu aproksymującego dla zadanych wartości x oraz głównej funkcji `main`.
+
+
+## MN_10
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację aproksymacji funkcji za pomocą ortogonalnych wielomianów Grama. 
+Wielomiany Grama zapewniają w tej metodzie zdecydowanie lepszą stabilność numeryczną, niż w metodach
+prezentowanych wcześniej. Program podobnie jak poprzednio korzysta z danych wczytanych z pliku 
+tekstowego
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* NumPy 2.2.2
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany został plik z przykładowymi dwoma
+kolumnami danych (x, y) oraz z oznaczoną na wstępie ilościa wierszy danych. Struktura kodu składa się 
+z funkcji `read_file` odpowiadającej za wczytanie danych z pliku, `approx` tworzącej macierz normalną 
+oraz odpowiedni wektor `f` z danych wejściowych, `scal_gf` łączącej macierz i wektor w macierz 
+rozszerzoną, `postepowanie_proste` przekształcającej macierz do postaci trójkątnej, 
+`postepowanie_odwrotne` wyznaczającej rozwiązania układu równań, `new_y` wyliczającej nowe wartości 
+wielomianu aproksymującego dla zadanych wartości x oraz głównej funkcji `main`.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
