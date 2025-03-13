@@ -1,4 +1,6 @@
 # Ogólne informacje 
+Powyższe repozytorium jest zbiorem różnych programów (tu metod numerycznych), implementowanych w ramach 
+przedmiotu Metody Numeryczne, będącego częścią kursu Inżynierii Obliczeniowej AGH.
 
 # Główny spis treści
 * [MN_02](#MN_02)
@@ -10,6 +12,9 @@
 * [MN_08](#MN_08)
 * [MN_09](#MN_09)
 * [MN_10](#MN_10)
+* [MN_11](#MN_11)
+* [MN_12](#MN_12)
+* [MN_13](#MN_13)
 
 ## MN_02
 
@@ -246,7 +251,7 @@ wielomianu aproksymującego dla zadanych wartości x oraz głównej funkcji `mai
 Projekt realizuje implementację aproksymacji funkcji za pomocą ortogonalnych wielomianów Grama. 
 Wielomiany Grama zapewniają w tej metodzie zdecydowanie lepszą stabilność numeryczną, niż w metodach
 prezentowanych wcześniej. Program podobnie jak poprzednio korzysta z danych wczytanych z pliku 
-tekstowego
+tekstowego.
 
 ### Technologie
 W kodzie użyto:
@@ -256,11 +261,101 @@ W kodzie użyto:
 ### Wykorzystanie
 Kod był uruchamiany i napisany w środowisku PyCharm. Do testów dodany został plik z przykładowymi dwoma
 kolumnami danych (x, y) oraz z oznaczoną na wstępie ilościa wierszy danych. Struktura kodu składa się 
-z funkcji `read_file` odpowiadającej za wczytanie danych z pliku, `approx` tworzącej macierz normalną 
-oraz odpowiedni wektor `f` z danych wejściowych, `scal_gf` łączącej macierz i wektor w macierz 
-rozszerzoną, `postepowanie_proste` przekształcającej macierz do postaci trójkątnej, 
-`postepowanie_odwrotne` wyznaczającej rozwiązania układu równań, `new_y` wyliczającej nowe wartości 
-wielomianu aproksymującego dla zadanych wartości x oraz głównej funkcji `main`.
+z funkcji `read_file` odpowiadającej za wczytanie danych z pliku, `silnia` obliczającej współczynnik 
+dwumianowy, `wartosc_wielomianu` obliczającej wartość wskazanego iloczynu w ortogonalnych wielomianach
+Grama, `funkcja_f` obliczającej wartość wielomianu Grama dla zadanego stopnia, liczby punktów oraz 
+odpowiedniego współczynnika, `gram` implementującej interpolację z użyciem wielomianów Grama, a także 
+funkcji `main` gdzie zachodzi ogólna logika kodu oraz interakcja z użytkownikiem.
+
+
+## MN_11
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację 3 podstawowych metod numerycznych rozwiązujących równania różniczkowe I 
+rzędu - metodę Eulera, metodę Rungeo-Kutty II rzędu oraz metodę Rungego-Kutty IV rzędu.
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Struktura kodu składa się z funkcji `fun`, `fun_2` 
+definiujących wzory funkcji różniczkowych, `euler` implementującej metodę Eulera bazującą na przybliżeniu 
+stycznej do wykresu funkcji, `rk2` realizującej metodę Rungego-Kutty II rzędu, gdzie wykorzystywana jest 
+średnia z dwóch przybliżeń wartości funkcji, `rk4` implementującej metodę Rungego_Kutty IV rzędu (o 
+wysokiej dokładności) oraz `main` odpowiadajćej za ogólną logike i organizację programu.
+
+
+## MN_12
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację metod stycznych oraz siecznych (Newtona oraz ilorazu różnicowego), 
+służących do znajdowania miejsc zerowych funkcji.
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Struktura kodu składa się z funkcji `fun`
+i `fun2`, których miejsca zerowe będą poszukiwane, `funp` oraz `funp2` - pochodnych wcześniej 
+wspomnianych funkcji, `metoda_stycznych` gdzie przybliżenie miejsca zerowego obliczane jest zgodnie 
+z zadanym dla tej metody wzorem, aż do osiągnięcia maksymalnej ilości iteracji, `metoda_siecznych`, 
+która właściwie jest wariantem poprzedniej funkcji, wykorzystujemy tu jednak przybliżenie ilorazu 
+różnicowego, `iloraz_roznicowy` obliczającej przybliżenie pochodnej w metodzie siecznych oraz 
+głównej funkcji `main` gdzie dla obu funkcji testowych przeprowadzane są obliczenia, w każdej iteracji 
+mamy informację o aktualnym położeniu punktu i wartości funkcji.
+
+
+## MN_13
+
+### Spis treści
+* [Ogólne informacje](#ogólne-informacje)
+* [Technologie](#technologie)
+* [Wykorzystanie](#wykorzystanie)
+
+### Ogólne informacje
+Projekt realizuje implementację kolejnych metod służących do znajdowania miejsc zerowych funkcji, 
+w tym przypadku metody bisekcji oraz metody fal linii (reguła falsi).
+
+### Technologie
+W kodzie użyto:
+* Python 3.12
+* math
+	
+### Wykorzystanie
+Kod był uruchamiany i napisany w środowisku PyCharm. Struktura kodu składa się z funkcji `fun1`, 
+której pierwiastki są poszukiwane w programie, `alg_bisekcji`, która implementuję algorytm poszukiwania 
+miejsca zerowego w zadanym przedziale (przedział jest w kazdej iteracji na pół i wybierany jest ten 
+przedział, dla którego funkcja zmienia znak - funkcja na końcach przedziału musi zmieniać znak), 
+`metoda_fal_linii`, która implementuje regułę falsi, gdzie miesjce zerowe jest poszukiwane poprzez 
+wyznaczenie przecięcia linii łączącej punkty na wykresie funkcji (tutaj również musi zachodzic zmiana 
+znaku między końcami przedziałów) oraz `main` odpowiadającej za ogólną logikę i organizację kodu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
