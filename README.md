@@ -1,3 +1,4 @@
+Go to [English version](#english-version)
 # Ogólne informacje 
 Powyższe repozytorium jest zbiorem różnych programów (tu metod numerycznych), implementowanych w ramach 
 przedmiotu Metody Numeryczne, będącego częścią kursu Inżynierii Obliczeniowej AGH.
@@ -342,38 +343,336 @@ przedział, dla którego funkcja zmienia znak - funkcja na końcach przedziału 
 wyznaczenie przecięcia linii łączącej punkty na wykresie funkcji (tutaj również musi zachodzic zmiana 
 znaku między końcami przedziałów) oraz `main` odpowiadającej za ogólną logikę i organizację kodu.
 
+# English version
 
+# General Information
+The above repository is a collection of various programs (here numerical methods), implemented as part of the Numerical Methods course, which is part of the Computational Engineering program at AGH University.
 
+# Main Table of Contents
+* [MN_02](#MN_02)
+* [MN_03_1](#MN_03_1)
+* [MN_04_1](#MN_04_1)
+* [MN_05_01](#MN_05_01)
+* [MN_06](#MN_06)
+* [MN_07](#MN_07)
+* [MN_08](#MN_08)
+* [MN_09](#MN_09)
+* [MN_10](#MN_10)
+* [MN_11](#MN_11)
+* [MN_12](#MN_12)
+* [MN_13](#MN_13)
 
+## MN_02
 
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
 
+### General Information
+The project implements a simple Newton interpolation for any text data created according to a template, loaded 
+from a text file. The user provides a point at which they want to calculate the value of the function defined by 
+the interpolation nodes in the text file. As a result, the user receives the value of the function at the point 
+and the calculated divided difference coefficient.
 
+### Technologies
+The code uses:
+* Python 3.12
 
+### Usage
+The code was run and written in the PyCharm environment. To fully test the code, two text files with different 
+numbers of interpolation nodes and different values were added. The code structure consists of a `read_file` 
+function that loads the text file into appropriate data structures, the main computational function 
+`interpolacja_newtona`, where the Newton polynomial is constructed, and the `main` function responsible for user 
+interaction and basic console messages.
 
+## MN_03_1
 
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
 
+### General Information
+The project implements the Gaussian elimination method for solving systems of linear equations read from a text 
+file. The idea of the program focuses on transforming the matrix into an upper triangular matrix, then using back 
+substitution to obtain the desired unknown values. As a result, we get a list of coefficients that are the 
+solutions to the given system of equations.
 
+### Technologies
+The code uses:
+* Python 3.12
+* NumPy 2.2.2
 
+### Usage
+The code was run and written in the PyCharm environment. To test the program, two text files with example 
+matrices (systems) and their dimensions at the beginning of the file were added. The code structure consists of 
+the `read_file` function, which is responsible for loading the augmented matrix of the system from the file, 
+`postepowanie_proste`, which implements Gaussian elimination - transforming the matrix into a triangular form, 
+`postepowanie_odwrotne`, which determines the unknowns through back substitution, and `main`, where all component 
+functions are used, and the result is printed.
 
+## MN_04_1
 
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
 
+### General Information
+The project implements an extended version of the previous project, where we deal with an extended Gaussian 
+elimination method that includes pivot selection - pivoting - and Crout elimination. The program, as before, 
+solves systems of linear equations based on a text file.
 
+### Technologies
+The code uses:
+* Python 3.12
+* NumPy 2.2.2
 
+### Usage
+The code was run and written in the PyCharm environment. For testing, three text files with example matrices 
+(systems) and their dimensions at the beginning of the file were added. The code structure consists of the 
+`read_file` function, which loads the augmented matrix of the system of equations from the file, `pivoting`, 
+which implements partial pivot selection in Gaussian elimination, `postepowanie_proste`, which standardly 
+performs Gaussian elimination, `postepowanie_odwrotne`, which generates solutions to the system through 
+substitution, `edytuj_kolumny`, which implements dynamic column swapping in Crout's method, 
+`postepowanie_proste_crout`, which performs Gaussian elimination with dynamic column swapping, 
+`postepowanie_odwrotne_crout`, which generates solutions to the system of equations considering column swapping, 
+and `main`, which is responsible for the overall logic of the program, the appropriate use of the designed 
+functions, and generating printouts for the user.
 
+## MN_05_01
 
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
 
+### General Information
+The project implements the LU decomposition method for solving systems of linear equations by decomposing the 
+coefficient matrix into the product of a lower triangular matrix L and an upper triangular matrix U. The program 
+works by first loading data from text files, performing LU decomposition, and then solving the system of 
+equations by solving two triangular systems.
 
+### Technologies
+The code uses:
+* Python 3.12
+* NumPy 2.2.2
 
+### Usage
+The code was run and written in the PyCharm environment. For testing, two files were added: one with matrix A 
+(the coefficient matrix) and the other with vector B (the vector of free terms). The code structure consists of 
+the `read_file_macierz` function, which loads matrix A from the file, `read_file_wektor`, which loads vector B 
+from the file, `utworz_macierz`, which creates a zero matrix, `utworz_macierz_L_U`, which performs LU 
+decomposition of matrix A, `wektor_y`, which solves the system L*Y=B, `wektor_x`, which solves the system U*X=Y, 
+and `main`, which manages the overall program flow and prints the obtained results.
 
+## MN_06
 
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
 
+### General Information
+The project implements the LDU decomposition method for solving systems of linear equations by decomposing the 
+coefficient matrix into the product of a lower triangular matrix L, an upper triangular matrix U, and a diagonal 
+matrix D. The program works by first loading data from a text file (including the coefficient matrix A and the 
+vector of free terms B), checking if the matrix is diagonally dominant, decomposing matrix A into L, D, and U 
+components, calculating the diagonal matrix D, and iteratively solving the system of linear equations through 
+simple iteration. Additionally, a second version of the algorithm is added, which generates iterations until a 
+given error tolerance is reached.
 
+### Technologies
+The code uses:
+* Python 3.12
+* NumPy 2.2.2
 
+### Usage
+The code was run and written in the PyCharm environment. For testing, a file with the augmented matrix of the 
+system of equations was added, along with the dimension of matrix A (the number of unknowns). The code structure 
+consists of the `read_file_macierz` function, which loads data from the file, `spr_diagonalnosc`, which checks 
+the diagonal dominance condition, `rozklad_LDU`, which decomposes the matrix into L, D, and U matrices, 
+`macierz_odwrotna`, which calculates the inverse of the diagonal matrix D, `pomnoz_macierz_wektorz`, which 
+multiplies a matrix by a vector, `mnoz_macierze`, which performs matrix multiplication, `rozwiazania`, which 
+solves the system iteratively for a fixed number of iterations, `rozwiazanie_2`, which solves the system 
+iteratively until a given stopping condition is met, and `main`, which manages the overall program logic and 
+prints basic information.
 
- 
+## MN_07
 
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
 
+### General Information
+The project implements three different methods of integrating a function of one variable over a given interval. 
+The implemented methods are the rectangle method (approximating the integral by summing the function values at 
+the midpoints of the intervals), the trapezoidal method (calculating the area under the graph using trapezoids), 
+and Simpson's method (estimating the function value by parabolic approximation). The user can specify the 
+integration interval and the number of subintervals for the methods.
 
+### Technologies
+The code uses:
+* Python 3.12
+* math
+
+### Usage
+The code was run and written in the PyCharm environment. For testing, three different function formulas were 
+added to the functions. The code structure consists of the `metoda_prostokatow` function, which implements the 
+rectangle method, `metoda_trapezow`, which implements the trapezoidal method, `metoda_simpsona`, which implements 
+the parabolic method, three test variants `sin`, `exp`, and `fun_x`, and the standard `main` function, which is 
+responsible for user interaction, the use of appropriate functions, and printing the resulting information.
+
+## MN_08
+
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
+
+### General Information
+The project implements, like the previous project, three basic integration methods and an additional, more 
+advanced method - the Gaussian quadrature method for 2, 3, and 4 nodes. Tests of the effectiveness of these 
+methods on various mathematical functions were also conducted.
+
+### Technologies
+The code uses:
+* Python 3.12
+* math
+
+### Usage
+The code was run and written in the PyCharm environment. For testing, three different function formulas were 
+added to the functions. The code structure consists of the (previous three functions) `metoda_prostokatow`, 
+`metoda_trapezow`, and `metoda_simpsona`, added functions `kwadratura_2`, which implements Gaussian quadrature 
+for 2 nodes, `kwadratura_3`, which implements Gaussian quadrature for 3 nodes, `kwadratura_4`, which implements 
+Gaussian quadrature for 4 nodes, test functions, and the main `main` function.
+
+## MN_09
+
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
+
+### General Information
+The project implements polynomial approximation using the least squares method. The required data is loaded from 
+a text file, the normal matrix of the normal equations system is created, the system is solved using Gaussian 
+elimination, and finally, the coefficients of the approximating polynomial are determined.
+
+### Technologies
+The code uses:
+* Python 3.12
+* NumPy 2.2.2
+
+### Usage
+The code was run and written in the PyCharm environment. For testing, a file with example two columns of data (x, 
+y) and the number of data rows marked at the beginning was added. The code structure consists of the `read_file` 
+function, which is responsible for loading data from the file, `approx`, which creates the normal matrix and the 
+corresponding vector `f` from the input data, `scal_gf`, which combines the matrix and vector into an augmented 
+matrix, `postepowanie_proste`, which transforms the matrix into a triangular form, `postepowanie_odwrotne`, which 
+determines the solutions to the system of equations, `new_y`, which calculates new values of the approximating 
+polynomial for given x values, and the main `main` function.
+
+## MN_10
+
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
+
+### General Information
+The project implements function approximation using orthogonal Gram polynomials. Gram polynomials provide 
+significantly better numerical stability in this method than in the methods presented earlier. The program, as 
+before, uses data loaded from a text file.
+
+### Technologies
+The code uses:
+* Python 3.12
+* NumPy 2.2.2
+
+### Usage
+The code was run and written in the PyCharm environment. For testing, a file with example two columns of data (x, 
+y) and the number of data rows marked at the beginning was added. The code structure consists of the `read_file` 
+function, which is responsible for loading data from the file, `silnia`, which calculates the binomial 
+coefficient, `wartosc_wielomianu`, which calculates the value of the specified product in orthogonal Gram 
+polynomials, `funkcja_f`, which calculates the value of the Gram polynomial for a given degree, number of points, 
+and the corresponding coefficient, `gram`, which implements interpolation using Gram polynomials, and the `main` 
+function, where the general logic of the code and user interaction takes place.
+
+## MN_11
+
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
+
+### General Information
+The project implements three basic numerical methods for solving first-order differential equations - the Euler 
+method, the second-order Runge-Kutta method, and the fourth-order Runge-Kutta method.
+
+### Technologies
+The code uses:
+* Python 3.12
+
+### Usage
+The code was run and written in the PyCharm environment. The code structure consists of the `fun`, `fun_2` 
+functions defining the formulas of differential functions, `euler`, which implements the Euler method based on 
+the approximation of the tangent to the function graph, `rk2`, which implements the second-order Runge-Kutta 
+method, where the average of two approximations of the function value is used, `rk4`, which implements the fourth-
+order Runge-Kutta method (with high accuracy), and `main`, which is responsible for the general logic and 
+organization of the program.
+
+## MN_12
+
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
+
+### General Information
+The project implements tangent and secant methods (Newton's method and the difference quotient) for finding the 
+roots of functions.
+
+### Technologies
+The code uses:
+* Python 3.12
+
+### Usage
+The code was run and written in the PyCharm environment. The code structure consists of the `fun` and `fun2` 
+functions, whose roots are being sought, `funp` and `funp2` - the derivatives of the previously mentioned 
+functions, `metoda_stycznych`, where the approximation of the root is calculated according to the formula for 
+this method until the maximum number of iterations is reached, `metoda_siecznych`, which is essentially a variant 
+of the previous function, but here we use the approximation of the difference quotient, `iloraz_roznicowy`, which 
+calculates the approximation of the derivative in the secant method, and the main `main` function, where 
+calculations are performed for both test functions, and in each iteration, we have information about the current 
+position of the point and the value of the function.
+
+## MN_13
+
+### Table of Contents
+* [General Information](#general-information)
+* [Technologies](#technologies)
+* [Usage](#usage)
+
+### General Information
+The project implements additional methods for finding the roots of functions, in this case, the bisection method 
+and the false position method (regula falsi).
+
+### Technologies
+The code uses:
+* Python 3.12
+* math
+
+### Usage
+The code was run and written in the PyCharm environment. The code structure consists of the `fun1` function, 
+whose roots are being sought in the program, `alg_bisekcji`, which implements the algorithm for finding the root 
+in a given interval (the interval is halved in each iteration, and the interval where the function changes sign 
+is selected - the function must change sign at the ends of the interval), `metoda_fal_linii`, which implements 
+the false position method, where the root is sought by determining the intersection of the line connecting points 
+on the function graph (here also the sign must change between the ends of the interval), and `main`, which is 
+responsible for the general logic and organization of the code.
 
 
 
